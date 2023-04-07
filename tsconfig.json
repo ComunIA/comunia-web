@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "baseUrl": ".",
+    "target": "esnext",
     "lib": [
+      "es6",
+      "es7",
       "dom",
       "dom.iterable",
       "esnext"
@@ -18,9 +21,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "preserve",
+    "incremental": true
   },
   "include": [
-    "src"
+    "pages",
+    "components",
+    "utils",
+    "api"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
