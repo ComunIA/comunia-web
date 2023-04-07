@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Navbar } from 'components/Navbar';
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: { Component: any; pageProps: any }) {
   return (
     <div>
       <StrictMode>

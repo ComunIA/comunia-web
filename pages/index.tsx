@@ -120,7 +120,6 @@ export default function MapReportsPage() {
                     <FormLabel>Palabras Clave</FormLabel>
                     <Select
                       isMulti
-                      styles={{ zIndex: 1000 }}
                       placeholder="Palabras Clave"
                       value={keywordsData}
                       onChange={setKeywords}
