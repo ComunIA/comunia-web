@@ -55,7 +55,6 @@ export default function MapReportsPage() {
     selectedReport.neighborhood = _.flatMap(selectedReport.neighborhood);
     selectedReport.sector = _.flatMap(selectedReport.sector);
     selectedReport.report_id = _.flatMap(selectedReport.report_id);
-    console.log('Despues', selectedReport);
   }
   useEffect(() => {
     const timeOutId = setTimeout(() => setProblem(_problem), 500);

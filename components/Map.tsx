@@ -184,10 +184,7 @@ export function Map({
   }, [percentage]);
 
   const clickEvent = async (event: any) => {
-    console.log(event.points);
-    console.log(reports);
     const selectedReports = event.points.map((x: any) => reports[x.pointIndex]);
-    console.log(selectedReports);
     onSelect(selectedReports);
   };
 
