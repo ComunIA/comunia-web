@@ -52,7 +52,7 @@ const toDataReports = (reports: Report[], problem: string): Data => {
     hovertemplate: `
     <b>Numero de Reportes:</b> %{text.num_reports}
     <br><b>Match:</b> %{text.score:.0f}%
-    <br><b>Palabras Clave:</b> %{text.alias}
+    <br><b>Palabras Clave:</b> %{text.keywords}
     `,
     text: reportsData as any,
     showlegend: true,
