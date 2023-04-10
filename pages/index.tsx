@@ -51,7 +51,6 @@ export default function MapReportsPage() {
     selectedReport.cluster = selectedReport.cluster[0];
     selectedReport.complaint = selectedReport.complaint[0];
     selectedReport.date = selectedReport.date[0];
-    selectedReport.issue = selectedReport.issue[0];
     selectedReport.location = _.flatMap(selectedReport.location);
     selectedReport.neighborhood = _.flatMap(selectedReport.neighborhood);
     selectedReport.sector = _.flatMap(selectedReport.sector);

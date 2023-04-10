@@ -92,7 +92,6 @@ export interface Report {
   cluster: string;
   complaint: string;
   date: string;
-  issue: string;
   location: string;
   neighborhood: string;
   report_id: string[];
@@ -108,7 +107,6 @@ export interface Complaint {
   cluster: string;
   complaint: string;
   date: string;
-  issue: string;
   location: string;
   neighborhood: string;
   report_id: string;
