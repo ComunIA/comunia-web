@@ -169,12 +169,7 @@ export function Map({
 
   useDidMountEffect(() => {
     fetchData();
-  }, [keywords, threshold, typeData]);
-
-  useEffect(() => {
-    const timeOutId = setTimeout(() => fetchData(), 500);
-    return () => clearTimeout(timeOutId);
-  }, [problem]);
+  }, [keywords, threshold, typeData, problem]);
 
   useDidMountEffect(() => {
     if (complaints.length == 0 || reports.length == 0) return;

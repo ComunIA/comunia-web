@@ -19,7 +19,7 @@ import {
   FormLabel,
 } from '@chakra-ui/react';
 import { MultiValue, Select } from 'chakra-react-select';
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import Chat from 'components/Chat';
 import SplitPane, { Pane, SashContent } from 'split-pane-react';
 import 'split-pane-react/esm/themes/default.css';
@@ -30,13 +30,14 @@ import { ReportInfo } from 'components/reportInfo';
 
 export default function MapReportsPage() {
   const [selectedReports, setSelectedReports] = useState<Report[]>([]);
+  const [_problem, _setProblem] = useState<string>('');
   const [problem, setProblem] = useState<string>('');
   const [threshold, setThreshold] = useState<number>(2);
   const [typeData, setTypeData] = useState<string>('comunitario');
   const [percentage, setPercentage] = useState<number>(0.5);
   const [sizes, setSizes] = useState<any[]>(['40%', '50%']);
   const [keywordsData, setKeywords] = useState<MultiValue<{ label: string; value: string }>>([]);
-  const keywords = keywordsData.map((x) => x.value);
+  const keywords = useMemo(() => keywordsData.map((x) => x.value), [keywordsData]);
   const Sash = SashContent as any;
   let selectedReport: any = null;
   if (selectedReports.length != 0) {
@@ -57,11 +58,10 @@ export default function MapReportsPage() {
     selectedReport.report_id = _.flatMap(selectedReport.report_id);
     console.log('Despues', selectedReport);
   }
-  const bodyRef = useRef<any>(null);
-
   useEffect(() => {
-    bodyRef.current = document.body;
-  }, []);
+    const timeOutId = setTimeout(() => setProblem(_problem), 500);
+    return () => clearTimeout(timeOutId);
+  }, [_problem]);
 
   return (
     <Flex style={{ height: '100vh' }}>
@@ -130,8 +130,8 @@ export default function MapReportsPage() {
                     <FormLabel>Problematica</FormLabel>
                     <Input
                       placeholder="Problematica"
-                      value={problem}
-                      onChange={(e) => setProblem(e.target.value)}
+                      value={_problem}
+                      onChange={(e) => _setProblem(e.target.value)}
                       w="100%"
                     />
                   </FormControl>
