@@ -26,7 +26,7 @@ export function ReportInfo({ report }: { report: Report }) {
       </Text>
       <Text>
         <b>Palabras clave: </b>
-        {report.alias.join(', ')}
+        {report.keywords.join(', ')}
       </Text>
       {report.score ? (
         <Text>

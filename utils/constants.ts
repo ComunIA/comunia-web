@@ -88,7 +88,7 @@ export interface Report {
   num_reports: number;
   score: number;
   scores: number[];
-  alias: string[];
+  keywords: string[];
   cluster: string;
   complaint: string;
   date: string;
@@ -103,7 +103,7 @@ export interface Complaint {
   longitude: number;
   num_reports: number;
   score: number | undefined;
-  alias: string;
+  keywords: string;
   cluster: string;
   complaint: string;
   date: string;
